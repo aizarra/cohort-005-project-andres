@@ -19,6 +19,7 @@ import {
   LogOut,
   Settings,
 } from "lucide-react";
+import { NotificationBell } from "~/components/prototype-notifications/bell-dropdown";
 
 interface CurrentUser {
   id: number;
@@ -242,6 +243,7 @@ export function Sidebar({
                 {currentUser.role}
               </div>
             </div>
+            <NotificationBell />
             <NavLink
               to="/settings"
               title="Settings"
