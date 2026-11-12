@@ -13,6 +13,7 @@ import { Textarea } from "~/components/ui/textarea";
 import { UserRole, RefundStatus, users } from "~/db/schema";
 import { AlertTriangle } from "lucide-react";
 import { data, isRouteErrorResponse, Link } from "react-router";
+import { NotificationPreferencesPrototype } from "~/components/prototype-notifications/notification-preferences";
 import { db } from "~/db";
 import { eq } from "drizzle-orm";
 import { formatPrice } from "~/lib/utils";
@@ -187,6 +188,9 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
           </fetcher.Form>
         </CardContent>
       </Card>
+
+      {/* PROTOTYPE — notification preferences, remove when done */}
+      <NotificationPreferencesPrototype />
 
       {refundRequests.length > 0 && (
         <Card className="mt-8 max-w-md">
