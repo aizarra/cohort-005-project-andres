@@ -1,0 +1,17 @@
+{
+  "name": "Sandcastle (Docker-in-Docker)",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": { "moby": true },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "hostRequirements": { "cpus": 4, "memory": "16gb", "storage": "64gb" },
+  "secrets": {
+    "ANTHROPIC_API_KEY": { "description": "Anthropic API key used by the agent inside the Sandcastle sandbox" },
+    "GH_TOKEN": { "description": "GitHub token used by the agent inside the Sandcastle sandbox" }
+  },
+  "postCreateCommand": "corepack enable && (pnpm install --frozen-lockfile || pnpm install)",
+  "customizations": {
+    "vscode": { "extensions": ["biomejs.biome", "ms-azuretools.vscode-docker"] }
+  }
+}
