@@ -11,6 +11,7 @@ const BYTES_PER_TOKEN = 4;
 // GitHub reads as one file each and which cannot be split.
 const IGNORED = [
   /(^|\/)package-lock\.json$/,
+  /(^|\/)pnpm-lock\.yaml$/,
   /^drizzle\//,
   /^\.github\/workflows\/[^/]+\.yml$/,
 ];
